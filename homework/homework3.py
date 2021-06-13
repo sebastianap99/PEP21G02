@@ -8,7 +8,7 @@
 # example [1, True, '123', False, 6, ()] will be transformed into [123, 6, 1, 1, 0, 0]
 
 def ordered_ints(list_of_objects: list):
-    list2=[]
+    list2 = []
     for i in list_of_objects:
         if type(i) is int:
             list2.append(i)
@@ -19,6 +19,7 @@ def ordered_ints(list_of_objects: list):
     list2.sort(reverse=True)
     return list2
 
+
 print(ordered_ints([1, True, '123', False, 6, ()]))
 
 
@@ -28,11 +29,11 @@ print(ordered_ints([1, True, '123', False, 6, ()]))
 # when resolving try using this logic: 1^2+2^2 is 1^2+(1^2+1^2)^2
 
 def sum_of_square(n: int):
-    sum=0
-    if n<=1:
+    if n <= 1:
         return 1
     else:
-        return sum_of_square(n-1)+n**2
+        return sum_of_square(n - 1) + n ** 2
+
 
 print(sum_of_square(10))
 
@@ -42,9 +43,9 @@ print(sum_of_square(10))
 # For n = 3 the function should calculate (1^2)*(2^2)*(3^2)
 
 def factorial_of_squares(n: int):
-    fact=1
-    for n in range(1,n+1):
-        fact*=n**2
+    fact = 1
+    for n in range(1, n + 1):
+        fact *= n ** 2
     return fact
 
 
@@ -60,12 +61,11 @@ print(factorial_of_squares(5))
 # example: "1234567a Text to te5t" will become ("1234567A", "_ext_to_te_t")
 
 def process_text(text: str):
-    k=0
-    t=()
-    for i in process_text():
-        if i==" " and k!=1:
-            k+=1
-            text.split(i)
+    for i in text:
+        if i == " ":
+            t = tuple(text.split(i,1))
+            t[0].upper()
+    print(t)
 
 
 
